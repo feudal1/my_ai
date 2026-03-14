@@ -237,9 +237,8 @@ namespace tools
                             // 关闭已处理的文档
                             swApp.CloseDoc(swModel.GetTitle());
                                 
-              open_cad_doc_by_name.run(dwgFileName);
-              get_all_dim_style.run();
-              close_cad_doc.run();
+            
+            
                             Console.WriteLine($"已转换：{dwgFileName}");
                         }
                         else

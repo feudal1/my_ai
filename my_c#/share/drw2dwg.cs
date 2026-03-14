@@ -27,7 +27,7 @@ namespace tools
             }
             string dwgFileName = directory + "\\" + "出图" + "\\" +  "工程图" + "\\" + Path.GetFileNameWithoutExtension(fullpath) + ".dwg";
             swApp.SetUserPreferenceIntegerValue((int)swUserPreferenceIntegerValue_e.swDxfOutputNoScale, 1);
-          swApp.SetUserPreferenceIntegerValue((int)swUserPreferenceIntegerValue_e.swDxfVersion, (int)swDxfFormat_e.swDxfFormat_R12);
+          swApp.SetUserPreferenceIntegerValue((int)swUserPreferenceIntegerValue_e.swDxfVersion, (int)swDxfFormat_e.swDxfFormat_R2000);
            
             // 设置自定义映射文件
             if (swApp != null)

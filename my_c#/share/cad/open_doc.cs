@@ -22,7 +22,7 @@ static public void run(string filePath)
                         var doc = acadApp.Documents.Open(filePath, false, "");
                         doc.Activate(); // 激活窗口
                         
-                        Console.WriteLine($"📂 已打开：{filePath}");
+                        Console.WriteLine($" 已打开：{filePath}");
                     }
                     else
                     {
