@@ -66,8 +66,7 @@ using System.Text;
 
             // 使用 share 项目中的 drw2dwg 方法转换 DWG
             var dwgFileName = drw2dwg.run(swModel, swApp);
-              open_cad_doc_by_name.run(dwgFileName);
-              get_all_dim_style.run();
+      
            
             
             Debug.WriteLine($"工程图已转换为 DWG: {dwgFileName}");
