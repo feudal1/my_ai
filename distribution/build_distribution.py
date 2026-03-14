@@ -43,15 +43,25 @@ def clean_build():
     print_header("步骤 1/6: 清理构建目录")
     
     if BUILD_DIR.exists():
-        shutil.rmtree(BUILD_DIR)
-        print(f"已删除：{BUILD_DIR}")
+        try:
+            shutil.rmtree(BUILD_DIR)
+            print(f"已删除：{BUILD_DIR}")
+        except Exception as e:
+            print(f"警告：无法删除 build 目录：{e}")
     
+    # 只清理 output 目录内容，不删除目录本身
     if OUTPUT_DIR.exists():
-        shutil.rmtree(OUTPUT_DIR)
-        print(f"已删除：{OUTPUT_DIR}")
+        for item in OUTPUT_DIR.iterdir():
+            try:
+                if item.is_dir():
+                    shutil.rmtree(item)
+                else:
+                    item.unlink()
+            except Exception as e:
+                print(f"警告：无法删除 {item.name}: {e}")
+        print(f"已清理：{OUTPUT_DIR}")
     
     BUILD_DIR.mkdir(parents=True, exist_ok=True)
-    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     print("已创建构建目录")
 
 def build_projects():
@@ -64,7 +74,9 @@ def build_projects():
     result = subprocess.run(
         ["dotnet", "build", str(plugin_project), "--configuration", "Release", "/verbosity:quiet"],
         capture_output=True,
-        text=True
+        text=True,
+        encoding='utf-8',
+        errors='replace'
     )
     if result.returncode != 0:
         print(f"编译失败：{result.stderr}")
@@ -77,7 +89,9 @@ def build_projects():
     result = subprocess.run(
         ["dotnet", "build", str(ctools_project), "--configuration", "Release", "/verbosity:quiet"],
         capture_output=True,
-        text=True
+        text=True,
+        encoding='utf-8',
+        errors='replace'
     )
     if result.returncode != 0:
         print(f"编译失败：{result.stderr}")
@@ -307,8 +321,7 @@ def create_portable_zip():
 
 def create_install_bat():
     """创建安装脚本"""
-    install_script = """
-@echo off
+    install_script = r'''@echo off
 chcp 65001 >nul
 echo ============================================
 echo MyTools 安装程序
@@ -319,7 +332,7 @@ setlocal enabledelayedexpansion
 
 :: 获取当前目录
 set SCRIPT_DIR=%~dp0
-set INSTALL_DIR=%LOCALAPPDATA%\\MyTools
+set INSTALL_DIR=%LOCALAPPDATA%\MyTools
 
 echo 正在安装到：%INSTALL_DIR%
 echo.
@@ -331,36 +344,31 @@ if not exist "%INSTALL_DIR%" mkdir "%INSTALL_DIR%"
 echo 复制文件...
 xcopy "%SCRIPT_DIR%*.*" "%INSTALL_DIR%" /E /Y /Q
 
-:: 注册插件
+:: 注册插件（需要管理员权限）
 echo.
 echo 注册 SolidWorks 插件...
-call "%INSTALL_DIR%register_plugin.bat"
-
-:: 添加到 PATH
-echo.
-echo 添加到系统 PATH...
-for /f "skip=2 tokens=2,*" %%A in ('reg query "HKLM\\System\\CurrentControlSet\\Control\\Session Manager\\Environment" /v Path 2^>nul') do set SYSPATH=%%B
-echo %SYSPATH% | findstr /C:"%INSTALL_DIR%" >nul
+call "%INSTALL_DIR%\register_plugin.bat"
 if errorlevel 1 (
-    reg add "HKLM\\System\\CurrentControlSet\\Control\\Session Manager\\Environment" /v Path /t REG_EXPAND_SZ /d "%SYSPATH%;%INSTALL_DIR%" /f
-    echo 已添加到系统 PATH
-) else (
-    echo 已在 PATH 中
+    echo 注意：插件注册失败，可能需要以管理员身份运行此脚本
 )
 
-:: 通知资源管理器刷新环境变量
-setx PATH "%SYSPATH%;%INSTALL_DIR%" /M >nul
+:: 添加到 PATH - 使用 PowerShell
+echo.
+echo 添加到系统 PATH...
+powershell -Command "$installPath = '%INSTALL_DIR%'; $userPath = [Environment]::GetEnvironmentVariable('Path', 'User'); if ($userPath -notlike \"*$installPath*\") { $newPath = \"$userPath;$installPath\"; [Environment]::SetEnvironmentVariable('Path', $newPath, 'User'); Write-Host \"已添加到用户 PATH: $installPath\" } else { Write-Host \"已在 PATH 中\" }"
 
 echo.
 echo ============================================
 echo 安装完成！
 echo ============================================
 echo.
-echo 请重新打开命令提示符窗口，然后运行:
+echo 请关闭所有窗口，重新打开 CMD，然后运行:
 echo   tools help
 echo.
+echo 注意：如需注册 SolidWorks 插件，请以管理员身份重新运行此脚本
+echo.
 pause
-""".lstrip()
+'''.lstrip()
     
     with open(BUILD_DIR / "install.bat", "w", encoding="gbk") as f:
         f.write(install_script)
@@ -369,7 +377,7 @@ pause
 def main():
     """主函数"""
     print_header(f"MyTools 分发打包工具 v{VERSION}")
-    print(f"时间：datetime.now().strftime('%Y-%m-%d %H:%M:%S')")
+    print(f"时间：{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print(f"项目根目录：{PROJECT_ROOT}")
     
     # 执行打包流程

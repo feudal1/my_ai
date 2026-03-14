@@ -4,21 +4,15 @@
     // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-        {
-            "name": "运行python",
-            "type": "debugpy",
-            "request": "launch",
-            "program": "my_python/ptools/main.py",
-            "console": "integratedTerminal"
        
-        },
-        
+            
         {
-            "name": "发布python",
+            "name": "完整打包流程",
             "type": "debugpy",
             "request": "launch",
-            "program": "my_python/ptools/make_exe/build_main.py",
-            "console": "integratedTerminal"
+            "program": "${workspaceFolder}/distribution/build_distribution.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/distribution"
         }
     ]
 }

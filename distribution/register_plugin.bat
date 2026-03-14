@@ -1,17 +1,24 @@
 @echo off
 chcp 65001 >nul
 REM ============================================================================
-REM 注册 SolidWorks 插件 (MSI 安装程序使用)
+REM 注册 SolidWorks 插件 (MSI 安装程序使用) - UTF-8 版本
 REM ============================================================================
 
 setlocal enabledelayedexpansion
 
 :: 获取脚本所在目录
 set SCRIPT_DIR=%~dp0
-set PLUGIN_DLL=%SCRIPT_DIR%plugin.dll
 
-if not exist "%PLUGIN_DLL%" (
+:: 尝试多个可能的位置查找 plugin.dll
+if exist "%SCRIPT_DIR%plugin_files\plugin.dll" (
+    set PLUGIN_DLL=%SCRIPT_DIR%plugin_files\plugin.dll
+) else if exist "%SCRIPT_DIR%plugin.dll" (
+    set PLUGIN_DLL=%SCRIPT_DIR%plugin.dll
+) else (
     echo 错误：未找到 plugin.dll
+    echo 请确保 plugin.dll 在以下位置之一:
+    echo   - %SCRIPT_DIR%plugin_files\
+    echo   - %SCRIPT_DIR%
     exit /b 1
 )
 
