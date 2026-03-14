@@ -9,7 +9,7 @@
             "name": "发布python",
             "type": "debugpy",
             "request": "launch",
-            "program": "tools/make_exe/build_main.py",
+            "program": "my_python/ptools/make_exe/build_main.py",
             "console": "integratedTerminal"
         }
     ]

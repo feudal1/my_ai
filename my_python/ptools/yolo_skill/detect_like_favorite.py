@@ -1,4 +1,4 @@
-# e:\code\my_python_server\tools\yolo\detect_like_favorite.py
+
 import os
 import cv2
 import numpy as np

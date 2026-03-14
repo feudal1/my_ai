@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "tools": {
-      "commandName": "Project",
-      "commandLineArgs": "drw2dwg"
-    }
-  }
-}

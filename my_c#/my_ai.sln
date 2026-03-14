@@ -6,7 +6,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "plugin", "Plugin\plugin.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "share", "share\share.csproj", "{F0438ACC-7B88-FA17-7C50-366385D1B380}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tools", "tools\tools.csproj", "{5D4A677C-FEED-93AC-CD67-9EF0FCEFC24C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ctools", "ctools\ctools.csproj", "{4220110A-1E15-4FD1-FC51-793F1CEC9761}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,10 +22,10 @@ Global
 		{F0438ACC-7B88-FA17-7C50-366385D1B380}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F0438ACC-7B88-FA17-7C50-366385D1B380}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F0438ACC-7B88-FA17-7C50-366385D1B380}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5D4A677C-FEED-93AC-CD67-9EF0FCEFC24C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5D4A677C-FEED-93AC-CD67-9EF0FCEFC24C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5D4A677C-FEED-93AC-CD67-9EF0FCEFC24C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5D4A677C-FEED-93AC-CD67-9EF0FCEFC24C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4220110A-1E15-4FD1-FC51-793F1CEC9761}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4220110A-1E15-4FD1-FC51-793F1CEC9761}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4220110A-1E15-4FD1-FC51-793F1CEC9761}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4220110A-1E15-4FD1-FC51-793F1CEC9761}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
