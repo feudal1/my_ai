@@ -30,7 +30,7 @@ namespace cad_tools
 
             try
             {
-                double offsetX = 1000.0;
+                double offsetX = 500;
                 double baseOffsetX = 500.0; // X 方向基础偏移量
                 // 直接使用文件序号乘以偏移量 + 基础偏移
                 double insertX = fileIndex * offsetX + baseOffsetX;
@@ -48,7 +48,7 @@ namespace cad_tools
                     0.0,
                     false
                 );
-
+            
                 Console.WriteLine($"成功附加外部参照：{xrefName}，插入位置 X = {insertX:F2}, Y = {yOffset:F2}, 文件序号={fileIndex}");
             }
             catch (Exception ex)
