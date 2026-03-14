@@ -202,6 +202,59 @@ namespace tools
             var dwgFileName =drw2dwg.run(swModel, swApp);
             open_cad_doc_by_name.run(dwgFileName);
         }
+               [Command("folderdrw2dwg", Description = "批量转换文件夹内工程图为 DWG 格式", Parameters ="无", Group = "solidworks")]
+        static void FolderDrw2DwgCommand(string[] args)
+        {
+            if (swApp == null) return;
+
+            var files = FolderPicker.GetFileNamesFromSelectedFolder();
+            if (files != null)
+            {
+                foreach (var file in files)
+                {
+                        // 筛选 SLDDRW 后缀的文件
+                    if (!file.EndsWith(".SLDDRW", StringComparison.OrdinalIgnoreCase))
+                    {
+                        continue;
+                    }
+
+                    try
+                    {
+                        // 打开工程图文件
+                        ModelDoc2 swModel = (ModelDoc2)swApp.OpenDoc6(
+                            file, 
+                            (int)swDocumentTypes_e.swDocDRAWING, 
+                            (int)swOpenDocOptions_e.swOpenDocOptions_Silent, 
+                            "", 
+                            0, 
+                            0);
+
+                        if (swModel != null)
+                        {
+                            // 转换为 DWG
+                            var dwgFileName = drw2dwg.run(swModel, swApp);
+                            
+                            // 关闭已处理的文档
+                            swApp.CloseDoc(swModel.GetTitle());
+                                
+              open_cad_doc_by_name.run(dwgFileName);
+              get_all_dim_style.run();
+              close_cad_doc.run();
+                            Console.WriteLine($"已转换：{dwgFileName}");
+                        }
+                        else
+                        {
+                            Console.WriteLine($"无法打开文件：{file}");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"转换失败 {file}: {ex.Message}");
+                    }
+                }
+            }
+        }
+
                 [Command("add_name2info", Description = "添加零件名称到自定义属性", Parameters = "无", Group = "solidworks")]
         static void AddName2InfoCommand(string[] args)
         {

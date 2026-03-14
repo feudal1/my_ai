@@ -53,7 +53,6 @@ def build():
         sys.executable,
         "-m", "PyInstaller",
         "--onefile",
-        "--windowed",
         "--name", "ptool",
         "--icon", str(icon_file),
         "--distpath", str(bin_dir),

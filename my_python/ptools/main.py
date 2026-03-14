@@ -20,16 +20,16 @@ PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, PROJECT_ROOT)
 
 import typer
-from tools import get_all_commands, set_main_app_instance, register_all_main_commands, COMMAND_REGISTRY
-from tools.command_search import search_registered_commands
+from ptools import get_all_commands, set_main_app_instance, register_all_main_commands, COMMAND_REGISTRY
+from ptools.command_search import search_registered_commands
 
 # 导入 cmd_wrappers 模块以注册所有命令包装器
 try:
-    from tools.cmd_wrappers import blender_commands
-    from tools.cmd_wrappers import cad_commands
-    from tools.cmd_wrappers import llm_commands
-    from tools.cmd_wrappers import pdf_commands
-    from tools.cmd_wrappers import ue_commands
+    from ptools.cmd_wrappers import blender_commands
+    from ptools.cmd_wrappers import cad_commands
+    from ptools.cmd_wrappers import llm_commands
+    from ptools.cmd_wrappers import pdf_commands
+    from ptools.cmd_wrappers import ue_commands
   
 except (ImportError, ModuleNotFoundError) as e:
     print(f"警告：cmd_wrappers 模块导入失败：{e}")

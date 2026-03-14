@@ -44,6 +44,18 @@ namespace tools
                 }
             }
         }
+        [Command("folder2dxf", Description = "批量转换文件夹内 DXF 为 DWG", Parameters ="无", Group = "cad")]
+        static void Folder2DXF	(string[] args)
+        {
+            var files = FolderPicker.GetFileNamesFromSelectedFolder();
+            if (files != null)
+            {
+                foreach (var file in files)
+                {
+                    dwg2dxf.run(file);
+                }
+            }
+        }
 
         [Command("merge_dwg", Description = "合并多个 DWG 文件", Parameters = "<DWG 文件路径>", Group = "cad")]
         static void MergeDwgCommand(string[] args)
@@ -77,6 +89,11 @@ namespace tools
         static void FolderWithSubfoldersDrawDividerCommand(string[] args)
         {
             draw_divider.process_subfolders_with_divider();
+        }
+         [Command("get_all_dim_style", Description = "获取所有标注样式并添加 UUID4 后缀", Parameters = "无", Group = "cad")]
+        static void GetAllDimStyleCommand(string[] args)
+        {
+            get_all_dim_style.run();
         }
     }
 }

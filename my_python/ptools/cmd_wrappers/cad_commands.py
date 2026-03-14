@@ -3,7 +3,7 @@
 """
 CAD 工具命令包装
 """
-from tools import register_command
+from ptools import register_command
 
 
 @register_command('cad', 'obb')
