@@ -13,27 +13,9 @@ namespace tools
             try
             {
                 string pathname = Path.GetFileNameWithoutExtension(swModel.GetPathName());
-        
-                var ConfigNames = (string[])swModel.GetConfigurationNames();
-                Configuration? swConfig = null;
-                
-                foreach (var configName in ConfigNames)
-                {
-                             swConfig = (Configuration)swModel.GetConfigurationByName(configName);
-                var manger = swModel.Extension.CustomPropertyManager[configName];
-                object? vPropNames = null;
-                object? vPropTypes = null;
-                object? vPropValues = null;
-                object[] propValues;
-                object? resolved = null;
-                object? linkProp = null;
-                var nNbrProps = manger.Count;
-                manger.GetAll3(ref vPropNames, ref vPropTypes, ref vPropValues, ref resolved, ref linkProp);
-                propValues = (object[])vPropValues;
-                var propNames = (string[])vPropNames;
-                manger.Add3("名称", (int)swCustomInfoType_e.swCustomInfoText, pathname, (int)swCustomPropertyAddOption_e.swCustomPropertyReplaceValue);
-
-                }
+                 swModel.AddCustomInfo2("名称", (int)swCustomInfoType_e.swCustomInfoText, pathname);
+             
+                swModel.EditRebuild3();
        
 
             }
