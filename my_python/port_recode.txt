@@ -1,0 +1,2 @@
+blendermcp->3000
+llm_flask->5001

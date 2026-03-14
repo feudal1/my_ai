@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "my_ai_tools": {
+      "command": "e:/cqh/code/my_ai/my_python/venv/Scripts/python.exe",
+      "args": [
+        "-m",
+        "tools.mcp_server"
+      ],
+      "cwd": "e:/cqh/code/my_ai/my_python",
+      "env": {
+        "PYTHONPATH": "e:/cqh/code/my_ai/my_python"
+      }
+    }
+  }
+}

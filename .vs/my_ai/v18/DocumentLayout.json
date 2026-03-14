@@ -1,0 +1,186 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\cqh\\code\\my_ai\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{038FA4AF-5D44-C8DF-D0C1-ED2BA5F5DE29}|cshap_slk\\csharp3\\csharp3\\csharp3.csproj|e:\\cqh\\code\\my_ai\\cshap_slk\\csharp3\\csharp3\\addin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{038FA4AF-5D44-C8DF-D0C1-ED2BA5F5DE29}|cshap_slk\\csharp3\\csharp3\\csharp3.csproj|solutionrelative:cshap_slk\\csharp3\\csharp3\\addin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A36B1D3C-A281-F297-EF73-5C0212DBD45C}|cshap_slk\\sharecharp\\sharecharp\\sharecharp.csproj|e:\\cqh\\code\\my_ai\\cshap_slk\\sharecharp\\sharecharp\\asm2export.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A36B1D3C-A281-F297-EF73-5C0212DBD45C}|cshap_slk\\sharecharp\\sharecharp\\sharecharp.csproj|solutionrelative:cshap_slk\\sharecharp\\sharecharp\\asm2export.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7E4201B-2B25-A08C-05CA-4714EE21AD24}|cshap_slk\\cshap2\\cshap2.csproj|e:\\cqh\\code\\my_ai\\cshap_slk\\cshap2\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7E4201B-2B25-A08C-05CA-4714EE21AD24}|cshap_slk\\cshap2\\cshap2.csproj|solutionrelative:cshap_slk\\cshap2\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A36B1D3C-A281-F297-EF73-5C0212DBD45C}|cshap_slk\\sharecharp\\sharecharp\\sharecharp.csproj|e:\\cqh\\code\\my_ai\\cshap_slk\\sharecharp\\sharecharp\\exportdxf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A36B1D3C-A281-F297-EF73-5C0212DBD45C}|cshap_slk\\sharecharp\\sharecharp\\sharecharp.csproj|solutionrelative:cshap_slk\\sharecharp\\sharecharp\\exportdxf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A36B1D3C-A281-F297-EF73-5C0212DBD45C}|cshap_slk\\sharecharp\\sharecharp\\sharecharp.csproj|e:\\cqh\\code\\my_ai\\cshap_slk\\sharecharp\\sharecharp\\get_thickness_from_solidfolder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A36B1D3C-A281-F297-EF73-5C0212DBD45C}|cshap_slk\\sharecharp\\sharecharp\\sharecharp.csproj|solutionrelative:cshap_slk\\sharecharp\\sharecharp\\get_thickness_from_solidfolder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A36B1D3C-A281-F297-EF73-5C0212DBD45C}|cshap_slk\\sharecharp\\sharecharp\\sharecharp.csproj|e:\\cqh\\code\\my_ai\\cshap_slk\\sharecharp\\sharecharp\\sharecharp.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{A36B1D3C-A281-F297-EF73-5C0212DBD45C}|cshap_slk\\sharecharp\\sharecharp\\sharecharp.csproj|solutionrelative:cshap_slk\\sharecharp\\sharecharp\\sharecharp.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7E4201B-2B25-A08C-05CA-4714EE21AD24}|cshap_slk\\cshap2\\cshap2.csproj|e:\\cqh\\code\\my_ai\\cshap_slk\\cshap2\\cshap2.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{F7E4201B-2B25-A08C-05CA-4714EE21AD24}|cshap_slk\\cshap2\\cshap2.csproj|solutionrelative:cshap_slk\\cshap2\\cshap2.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{038FA4AF-5D44-C8DF-D0C1-ED2BA5F5DE29}|cshap_slk\\csharp3\\csharp3\\csharp3.csproj|e:\\cqh\\code\\my_ai\\cshap_slk\\csharp3\\csharp3\\csharp3.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{038FA4AF-5D44-C8DF-D0C1-ED2BA5F5DE29}|cshap_slk\\csharp3\\csharp3\\csharp3.csproj|solutionrelative:cshap_slk\\csharp3\\csharp3\\csharp3.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A36B1D3C-A281-F297-EF73-5C0212DBD45C}|cshap_slk\\sharecharp\\sharecharp\\sharecharp.csproj|e:\\cqh\\code\\my_ai\\cshap_slk\\sharecharp\\sharecharp\\profiler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A36B1D3C-A281-F297-EF73-5C0212DBD45C}|cshap_slk\\sharecharp\\sharecharp\\sharecharp.csproj|solutionrelative:cshap_slk\\sharecharp\\sharecharp\\profiler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\cqh\\code\\my_ai\\cshap_slk\\csharp3\\csharp3\\Class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:cshap_slk\\csharp3\\csharp3\\Class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "exportdxf.cs",
+              "DocumentMoniker": "E:\\cqh\\code\\my_ai\\cshap_slk\\sharecharp\\sharecharp\\exportdxf.cs",
+              "RelativeDocumentMoniker": "cshap_slk\\sharecharp\\sharecharp\\exportdxf.cs",
+              "ToolTip": "E:\\cqh\\code\\my_ai\\cshap_slk\\sharecharp\\sharecharp\\exportdxf.cs",
+              "RelativeToolTip": "cshap_slk\\sharecharp\\sharecharp\\exportdxf.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAAwA8AAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-10T01:42:04.629Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "asm2export.cs",
+              "DocumentMoniker": "E:\\cqh\\code\\my_ai\\cshap_slk\\sharecharp\\sharecharp\\asm2export.cs",
+              "RelativeDocumentMoniker": "cshap_slk\\sharecharp\\sharecharp\\asm2export.cs",
+              "ToolTip": "E:\\cqh\\code\\my_ai\\cshap_slk\\sharecharp\\sharecharp\\asm2export.cs",
+              "RelativeToolTip": "cshap_slk\\sharecharp\\sharecharp\\asm2export.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-10T01:24:24.175Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "cshap2.csproj",
+              "DocumentMoniker": "E:\\cqh\\code\\my_ai\\cshap_slk\\cshap2\\cshap2.csproj",
+              "RelativeDocumentMoniker": "cshap_slk\\cshap2\\cshap2.csproj",
+              "ToolTip": "E:\\cqh\\code\\my_ai\\cshap_slk\\cshap2\\cshap2.csproj",
+              "RelativeToolTip": "cshap_slk\\cshap2\\cshap2.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-03-10T01:20:53.762Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "sharecharp",
+              "DocumentMoniker": "E:\\cqh\\code\\my_ai\\cshap_slk\\sharecharp\\sharecharp\\sharecharp.csproj",
+              "RelativeDocumentMoniker": "cshap_slk\\sharecharp\\sharecharp\\sharecharp.csproj",
+              "ToolTip": "E:\\cqh\\code\\my_ai\\cshap_slk\\sharecharp\\sharecharp\\sharecharp.csproj",
+              "RelativeToolTip": "cshap_slk\\sharecharp\\sharecharp\\sharecharp.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-03-09T09:32:49.448Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "csharp3",
+              "DocumentMoniker": "E:\\cqh\\code\\my_ai\\cshap_slk\\csharp3\\csharp3\\csharp3.csproj",
+              "RelativeDocumentMoniker": "cshap_slk\\csharp3\\csharp3\\csharp3.csproj",
+              "ToolTip": "E:\\cqh\\code\\my_ai\\cshap_slk\\csharp3\\csharp3\\csharp3.csproj",
+              "RelativeToolTip": "cshap_slk\\csharp3\\csharp3\\csharp3.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-03-09T08:28:05.479Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "addin.cs",
+              "DocumentMoniker": "E:\\cqh\\code\\my_ai\\cshap_slk\\csharp3\\csharp3\\addin.cs",
+              "RelativeDocumentMoniker": "cshap_slk\\csharp3\\csharp3\\addin.cs",
+              "ToolTip": "E:\\cqh\\code\\my_ai\\cshap_slk\\csharp3\\csharp3\\addin.cs",
+              "RelativeToolTip": "cshap_slk\\csharp3\\csharp3\\addin.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAAA5wEYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-09T07:49:07.673Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "get_thickness_from_solidfolder.cs",
+              "DocumentMoniker": "E:\\cqh\\code\\my_ai\\cshap_slk\\sharecharp\\sharecharp\\get_thickness_from_solidfolder.cs",
+              "RelativeDocumentMoniker": "cshap_slk\\sharecharp\\sharecharp\\get_thickness_from_solidfolder.cs",
+              "ToolTip": "E:\\cqh\\code\\my_ai\\cshap_slk\\sharecharp\\sharecharp\\get_thickness_from_solidfolder.cs",
+              "RelativeToolTip": "cshap_slk\\sharecharp\\sharecharp\\get_thickness_from_solidfolder.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFcAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-10T02:46:32.194Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Profiler.cs",
+              "DocumentMoniker": "E:\\cqh\\code\\my_ai\\cshap_slk\\sharecharp\\sharecharp\\Profiler.cs",
+              "RelativeDocumentMoniker": "cshap_slk\\sharecharp\\sharecharp\\Profiler.cs",
+              "ToolTip": "E:\\cqh\\code\\my_ai\\cshap_slk\\sharecharp\\sharecharp\\Profiler.cs",
+              "RelativeToolTip": "cshap_slk\\sharecharp\\sharecharp\\Profiler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwMAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-09T07:18:10.956Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "E:\\cqh\\code\\my_ai\\cshap_slk\\csharp3\\csharp3\\Class1.cs",
+              "RelativeDocumentMoniker": "cshap_slk\\csharp3\\csharp3\\Class1.cs",
+              "ToolTip": "E:\\cqh\\code\\my_ai\\cshap_slk\\csharp3\\csharp3\\Class1.cs",
+              "RelativeToolTip": "cshap_slk\\csharp3\\csharp3\\Class1.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAADwvwUAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-09T07:17:01.701Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "main.cs",
+              "DocumentMoniker": "E:\\cqh\\code\\my_ai\\cshap_slk\\cshap2\\main.cs",
+              "RelativeDocumentMoniker": "cshap_slk\\cshap2\\main.cs",
+              "ToolTip": "E:\\cqh\\code\\my_ai\\cshap_slk\\cshap2\\main.cs",
+              "RelativeToolTip": "cshap_slk\\cshap2\\main.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAAwD0AAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-09T07:08:28.813Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
