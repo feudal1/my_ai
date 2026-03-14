@@ -19,8 +19,8 @@ def speak_text(text):
     if not text.strip():
         return
     generator = tts.infer_stream(
-        spk_audio_path="tools\\tts\\bu.mp3",
-        prompt_audio_path="tools\\tts\\hez.ogg",
+        spk_audio_path="ptools\\tts\\bu.mp3",
+        prompt_audio_path="ptools\\tts\\hez.ogg",
         prompt_audio_text="貴方さまの手を、取ってしまうと思うのです。",
         text=text,
         debug=True,

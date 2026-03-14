@@ -1,6 +1,6 @@
 
 import typer
-from tools import register_command
+from ptools import register_command
 
 from .file_memory import get_sys_prompt_content, save_messages_to_file
 

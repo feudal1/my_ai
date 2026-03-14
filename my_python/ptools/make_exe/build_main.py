@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-将 main.py 打包成单文件可执行程序
-输出位置：tools/bin/ptool.exe
+将 ptools.py 打包成单文件可执行程序
+输出位置：my_python/ptools/bin/ptools.exe
 """
 import os
 import sys
@@ -10,19 +10,43 @@ import subprocess
 from pathlib import Path
 
 def build():
-    # 项目根目录
-    project_root = Path(__file__).parent.parent
-    tools_dir = project_root
-    bin_dir = tools_dir / "bin"
-    main_script = tools_dir / "ptool.py"
-    icon_file = Path(__file__).parent / "favicon.ico"
+    # 当前脚本所在目录：my_python/ptools/make_exe
+    current_dir = Path(__file__).parent.absolute()
+    
+    # ptools 目录：my_python/ptools
+    ptools_dir = current_dir.parent
+    
+    # bin 目录：my_python/ptools/bin
+    bin_dir = ptools_dir / "bin"
+    
+    # ptool.py 路径：my_python/ptools/ptool.py
+    ptool_script = ptools_dir / "main.py"
+    
+    # 图标文件：my_python/ptools/make_exe/favicon.ico
+    icon_file = current_dir / "favicon.ico"
+    
+    print("=" * 70)
+    print("开始打包 main.py...")
+    print("=" * 70)
+    print(f"\n当前目录：{current_dir}")
+    print(f"ptools 目录：{ptools_dir}")
+    print(f"main.py: {ptool_script}")
+    print(f"图标：{icon_file}")
+    print(f"输出：{bin_dir}")
+    
+    # 检查文件是否存在
+    if not ptool_script.exists():
+        print(f"\n错误：找不到 ptool.py: {ptool_script}")
+        sys.exit(1)
+    
+    if not icon_file.exists():
+        print(f"\n错误：找不到图标文件：{icon_file}")
+        sys.exit(1)
     
     # 确保 bin 目录存在
     bin_dir.mkdir(exist_ok=True)
     
-    print("=" * 70)
-    print("开始打包 ptool.py...")
-    print("=" * 70)
+    print("\n" + "-" * 70)
     
     # PyInstaller 命令
     cmd = [
@@ -30,19 +54,16 @@ def build():
         "-m", "PyInstaller",
         "--onefile",
         "--windowed",
-        "--name", "main",
+        "--name", "ptool",
         "--icon", str(icon_file),
         "--distpath", str(bin_dir),
-        "--workpath", str(tools_dir / "build"),
-        "--specpath", str(tools_dir),
+        "--workpath", str(ptools_dir / "build"),
+        "--specpath", str(ptools_dir),
         "--clean",
-        str(main_script)
+        str(ptool_script)
     ]
     
     print(f"\n执行命令：{' '.join(cmd)}")
-    print(f"\n源文件：{main_script}")
-    print(f"图标文件：{icon_file}")
-    print(f"输出目录：{bin_dir}")
     print("-" * 70)
     
     try:
@@ -53,13 +74,13 @@ def build():
         print(f"可执行文件位置：{bin_dir / 'ptool.exe'}")
         
         # 清理临时文件
-        build_dir = tools_dir / "build"
+        build_dir = ptools_dir / "build"
         if build_dir.exists():
             print("\n清理临时文件...")
             import shutil
             shutil.rmtree(build_dir)
         
-        spec_file = tools_dir / "ptool.spec"
+        spec_file = ptools_dir / "ptool.spec"
         if spec_file.exists():
             spec_file.unlink()
             

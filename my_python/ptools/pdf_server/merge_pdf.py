@@ -7,7 +7,7 @@ import sys
 import typer
 from typing import Optional, List
 from pathlib import Path
-from tools import register_command
+from ptools import register_command
 
 logging.getLogger('PyPDF2').setLevel(logging.ERROR)
 

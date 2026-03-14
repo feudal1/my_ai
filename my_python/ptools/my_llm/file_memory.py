@@ -1,7 +1,7 @@
 from datetime import datetime
 import os
 import json
-from tools import register_command
+from ptools import register_command
 # 定义shot_memory.json文件路径
 SHOT_MEMORY_FILE = os.path.join(os.path.dirname(__file__), "shot_memory.json")
 memory_dir = os.path.join(os.getcwd(), "my_llm", "memory_data")

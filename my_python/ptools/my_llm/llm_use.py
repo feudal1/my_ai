@@ -13,7 +13,7 @@ from datetime import datetime
 from pathlib import Path
 try:
     # 本地私密文件（通常被 .gitignore 忽略）
-    from tools.my_llm.api_key import DASHSCOPE_API_KEY  # type: ignore
+    from ptools.my_llm.api_key import DASHSCOPE_API_KEY  # type: ignore
 except Exception:
     DASHSCOPE_API_KEY = os.environ.get("DASHSCOPE_API_KEY", "")  # type: ignore
 
@@ -23,15 +23,15 @@ from .file_memory import (
     save_longterm_memory_log,
     get_sys_prompt_content,
 )
-from tools.command_search import search_registered_commands
+from ptools.command_search import search_registered_commands
 
-# 与 main.py 一致：供 search 定位 my_c#/tools 的 project_root（即 my_python 目录）
+
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import http.client
 import json
 import typer
-from tools import register_command
+from ptools import register_command
 
 model="qwen3.5-flash"
 
