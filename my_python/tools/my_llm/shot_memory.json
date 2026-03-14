@@ -1,0 +1,6 @@
+[
+  {
+    "role": "assistant",
+    "content": "收到输入 \"nj\"，这不是有效的操作命令。请选择以下可用功能：\n\n| 功能 | 用法示例 |\n|------|----------|\n| SolidWorks 计划 | `p solidworks plan1` |\n| Blender 启动 | `p blender start` |\n| Blender 删除所有对象 | `p blender delete-all` |\n\n您想执行哪个任务？"
+  }
+]

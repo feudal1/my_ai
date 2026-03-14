@@ -28,11 +28,12 @@ from tools.command_search import search_registered_commands
 # 与 main.py 一致：供 search 定位 my_c#/tools 的 project_root（即 my_python 目录）
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from litellm import completion
+import http.client
+import json
 import typer
 from tools import register_command
 
-model="dashscope/qwen3.5-flash"
+model="qwen3.5-flash"
 
 
 import time
@@ -64,7 +65,7 @@ def llm_chat(userinput):
                 include_csharp_export=True,
                 project_root_for_csharp=PROJECT_ROOT,
             )
-            print(f"搜索结果: {results}")
+            print(f"搜索结果：{results}")
         except Exception:
             results = []
         if results:
@@ -79,19 +80,48 @@ def llm_chat(userinput):
         # 用户输入直接添加，不需要加搜索结果
         messages_with_system.append({"role": "user", "content": userinput})
         print(f"用户:{userinput}")
-        # 调用 LLM
+        
+        # 调用 LLM（使用原生 http 模块）
         start_time = time.time()
         print(f"LLM 调用中...")
-        response = completion(
-            model=model,
-            messages=messages_with_system,
-            api_key=DASHSCOPE_API_KEY
-        )
-        print(f"LLM 调用完成")
+        
+        # 准备请求数据
+        request_data = {
+            "model": model,
+            "messages": messages_with_system
+        }
+        body = json.dumps(request_data).encode('utf-8')
+        
+        # 创建 HTTPS 连接
+        conn = http.client.HTTPSConnection("dashscope.aliyuncs.com", timeout=60)
+        
+        try:
+            conn.request(
+                method="POST",
+                url="/compatible-mode/v1/chat/completions",
+                body=body,
+                headers={
+                    "Authorization": f"Bearer {DASHSCOPE_API_KEY}",
+                    "Content-Type": "application/json"
+                }
+            )
+            
+            response = conn.getresponse()
+            response_data = response.read().decode('utf-8')
+            
+            if response.status != 200:
+                raise RuntimeError(f"API 请求失败：{response.status} - {response_data}")
+            
+            result = json.loads(response_data)
+            content = result['choices'][0]['message']['content']
+            
+        finally:
+            conn.close()
+        
         end_time = time.time()
         elapsed_time_ms = (end_time - start_time) * 1000
         print(f"LLM 调用耗时：{elapsed_time_ms:.0f}毫秒")
-        content = response.choices[0].message.content
+        
         print(f"llm 返回：\n{content}")
         
         # 添加助手回复到消息历史（不保存 system）
