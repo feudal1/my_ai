@@ -59,6 +59,16 @@ def build():
         "--workpath", str(ptools_dir / "build"),
         "--specpath", str(ptools_dir),
         "--clean",
+        # 确保包含所有 ptools 子模块
+        "--hidden-import", "ptools",
+        "--hidden-import", "ptools.command_search",
+        "--hidden-import", "ptools.cmd_wrappers",
+        "--hidden-import", "ptools.cmd_wrappers.blender_commands",
+        "--hidden-import", "ptools.cmd_wrappers.cad_commands",
+        "--hidden-import", "ptools.cmd_wrappers.llm_commands",
+        "--hidden-import", "ptools.cmd_wrappers.pdf_commands",
+        "--hidden-import", "ptools.cmd_wrappers.ue_commands",
+        "--collect-all", "ptools",
         str(ptool_script)
     ]
     

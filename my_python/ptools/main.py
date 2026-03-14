@@ -34,11 +34,24 @@ try:
 except (ImportError, ModuleNotFoundError) as e:
     print(f"警告：cmd_wrappers 模块导入失败：{e}")
 
+# 显式导入 ptools 的所有导出函数，确保 PyInstaller 能发现
+from ptools import (
+    get_all_commands,
+    set_main_app_instance,
+    register_all_main_commands,
+    COMMAND_REGISTRY,
+    get_command_group,
+    get_main_command_registry,
+    register_command,
+    register_main_command,
+    command_group
+)
+
 # 创建主应用
 app = typer.Typer(
     help="统一工具入口 - 包含 PDF、UE、CAD、Memory、Blender 等多种工具",
-    invoke_without_command=True,
-    no_args_is_help=True
+    invoke_without_command=True
+  
 )
 
 # 设置主应用实例引用，以便后续注册命令

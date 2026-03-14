@@ -9,8 +9,8 @@
             "type": "debugpy",
             "request": "launch",
             "program": "my_python/ptools/main.py",
-            "console": "integratedTerminal",
-            "args": ["list"]
+            "console": "integratedTerminal"
+       
         },
         
         {
