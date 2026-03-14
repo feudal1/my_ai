@@ -40,7 +40,7 @@ namespace cad_tools
                 string xrefName = $"{baseName}_{Guid.NewGuid():N}";
 
                 object insertionPoint = new double[] { insertX, yOffset, 0.0 };
-                acadDoc.ModelSpace.AttachExternalReference(
+                var reference=acadDoc.ModelSpace.AttachExternalReference(
                     xrefPath,
                     xrefName,
                     insertionPoint,
